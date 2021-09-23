@@ -53,7 +53,7 @@ def home(request):
 
 #Search Project 
 @login_required(login_url="/accounts/login/")
-def search_project(request)
+def search_project(request):
   if "project" in request.GET and request.GET["project"]:
     search_term= request.GET.get("project")
     # title="Search"
@@ -69,7 +69,7 @@ def search_project(request)
     return render(request, 'search_results.html')
 
 # Display Profile 
-@login_required(login_url="/accounts/login/")
+@login_required(login_url="/accounts/login/"
 def profile(request, profile_id):
   title="Profile"
   try:
