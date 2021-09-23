@@ -26,7 +26,7 @@ class RateForm(ModelForm):
     fields=['design','usability','content']
     
 
-class CreateUserForm(UserCreationForm)
+class CreateUserForm(UserCreationForm):
   class Meta:
     model=User
     fields=['username', 'email','password1','password2']
