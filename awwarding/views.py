@@ -178,7 +178,7 @@ def disp_project(request,project_id):
 
 # Register
 def registerPage(request):
-  form = CreateUserForm(
+  form = CreateUserForm()
 
   if request.method =='POST':
     form = CreateUserForm(request.POST)
@@ -194,7 +194,7 @@ def registerPage(request):
   return render(request, 'accounts/register.html',context)
 
 # login
-def loginPage(request):
+def loginPage(request)
 	
 		if request.method == 'POST':
 			username = request.POST.get('username')
