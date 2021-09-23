@@ -1,4 +1,4 @@
-from .models import Profile,Project,Rate
+from .models import Profile,Project,Rat
 from django.forms import ModelForm
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
