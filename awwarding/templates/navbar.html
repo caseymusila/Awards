@@ -1,0 +1,48 @@
+{% load static %} 
+<div class="navigation">
+  <div class="navbar fixed-top bg-white navbar-expand-sm">
+    <nav class="container">
+      <form class="mb-0 h1" id="searchform" action="{% url 'search_project' %}">
+        <input name="project" autocomplete="off" id="searching" class="form-control d-none d-md-block"
+          placeholder="Search">
+        <i class="spinner "></i>
+      </form>
+      <span class="navbar-brand mb-0 h1 ml-auto mr-auto">
+        <a href="{% url 'home' %}"><img src="{% static 'images/scr.png' %}" alt="logo" style="width: 103px;"
+            class="logo image-fluid"></a>
+      </span>
+      <span class="pull-right">
+        <div class="nav-icons"> 
+          <a href="/" class="mr-2 nav-links">Home</a>
+          <a href="/profile/{{request.user.id}}" class="mr-2 nav-links">Profile</a>
+          <a href="{% url 'login' %}" class="mr-2 nav-links">Login/Register</a>
+          <a href="/logout" class=" mr-2 nav-links">Logout</a>
+          <button class="submit-website"><a href="/create_project" class="mr-2 text-white">SubmitWebsite</a></button>
+        </div>
+      </span>
+    </nav>
+  </div>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document" style="position: fixed;top: 8%;right: 13%;">
+      <div class="modal-content" style="width: 180%;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-left ">
+          <ul class="modal-text">
+            <li><a href="/profile/{{request.user.id}}" class="text-modal">Profile</a></li>
+            <hr>
+            <li><button><a href="/create_project" class="text-modal">Submit Website</a></button></li>
+            <hr>
+            <li><a href="/logout" class="text-modal">Logout</a></li>
+            <hr>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>

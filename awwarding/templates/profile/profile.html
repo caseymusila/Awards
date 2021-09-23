@@ -1,0 +1,113 @@
+{%extends 'base.html'%}
+ {% load static %}
+ {% load bootstrap3 %}
+  {% block styles %}
+  {{ block.super}}
+
+{% endblock %} 
+{% block content %}
+{{ block.super}}
+<div class="container" style="margin-top:8%">
+  <div class="content-section">
+    <div class="media">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-3">
+            <img class="rounded-circle account-img" src="{{profile.image.url}}"
+               style="width:12rem; height:12rem;object-fit: cover; margin-right: 3rem; border-radius: 50%;">
+          </div>
+          <div class="col-md-6 mt-3">
+            <div class="media-body">
+              <div class="account-heading">
+                <span class="mr-3 username">{{ profile.user.username }}</span>
+                 <span class="mr-3 ">{{ profile.bio }}</span>
+              </div>
+              <div class="profile-right">
+                <p class="mt-1">{{profile.email}}</p>
+              </div>
+                <div class="post-details mt-3 mb-3">
+                  <div class="count"> 
+                    {%if count == 1 %} 
+                    <div class="projects"> 
+                      {{count}} Project
+                    </div> 
+                      {%else%} 
+                    <div class="projects">
+                      {{count}} Projects
+                    </div>
+                    {%endif%} 
+                  </div>
+                </div> 
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row"> 
+            <div class="col-md-4 col-sm-4" >
+              <div class="m-4"> {% for project in projects %} <div class="card" style="width: 20rem;">
+                <div class="card-image">
+                  <a href="{% url 'disp_project' project.id %}">
+                    <img class="card-img-top" src="{{project.proj_img.url}}" alt="Card image cap">
+                  </a>
+                  <div class="image-overlay">
+                    <a href="{{project.link}}" style="text-decoration: none;"><i
+                        class="bi bi-arrow-right-circle text-white card-icon"></i></a>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <small class="card-text post-date">{{project.post_date}}</small><hr>
+                  <h5 class="card-title">{{project.name}}</h5>
+                  <p class="card-text">{{project.desc}}</p>
+                </div>
+              </div>
+            </div> 
+            {% endfor %} 
+          </div>
+          <div class="col-xs-12 col-md-3"></div>
+        </div>
+      </div>     
+    </div>
+  </div> 
+</div>
+<!-- Footer  -->
+<footer class="site-footer mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>About</h6>
+        <p class="text-justify">The awards for design, creativity and innovation on the Internet</p>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <h6>Categories</h6>
+        <ul class="footer-links">
+        </ul>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/profile/{{request.user.id}}">Profile</a></li>
+          <li><a href="/create_project">Add Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by <a href="#">Kyalo</a>. </p>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="bi bi-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="bi bi-twitter"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="bi bi-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End Footer  -->
+  {% endblock %}

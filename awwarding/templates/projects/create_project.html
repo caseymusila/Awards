@@ -1,0 +1,57 @@
+{%extends 'base.html'%} {% load static %} {% load bootstrap3 %} {% block styles %} {{ block.super}} {% endblock %}
+{% block content %} {{ block.super}} <div class="container">
+  <div id="wrapper" id="content">
+    <div class="register card mr-5 ml-5 mb-5 mt-5" style="padding: 20px;">
+      <div class="form-data">
+        <form action="{%url 'create_project'%}" method="post" enctype="multipart/form-data"> {% csrf_token %} <div
+            class=" intro card-header bg-white header text-center">
+            <img src="{% static 'images/scr.png' %}" alt="Instagram-logo" class="create-project-img">
+            <p class="mt-2" style="font-size: 12px;">Submit your website by providing a Name for the website,a screenshot of the website,a short
+              description and a link to the website</p>
+          </div> {% bootstrap_form form%} <button class="form-btn btn btn-sm" type="submit"
+            value="Create Project">Upload</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer  -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>About</h6>
+        <p class="text-justify">The awards for design, creativity and innovation on the Internet</p>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <h6>Categories</h6>
+        <ul class="footer-links">
+        </ul>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/profile/{{request.user.id}}">Profile</a></li>
+          <li><a href="/create_project">Add Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by <a href="#">Kyalo</a>. </p>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="bi bi-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="bi bi-twitter"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="bi bi-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End Footer  --> {% endblock  %}

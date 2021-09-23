@@ -1,0 +1,3 @@
+Hello {{name}}
+
+Welcome to Awwwards! Your go to site for awards on design,creativite and innovation on the internet. Create your profile and submit your first website for rating. Cheers!

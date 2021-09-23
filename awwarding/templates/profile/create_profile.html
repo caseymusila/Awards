@@ -1,12 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h3>first header</h3>
-</body>
-</html>
+{%extends 'base.html'%}
+{% load static %}
+{% load bootstrap3 %}
+
+{% block content %}
+{{ block.super}}
+<br>
+<br>
+<!-- Create Profile  -->
+<div class="container">
+  <div class="box content" id="wrapper" >
+    <div class="card ml-5 mr-5 mb-5 create-profile-card">
+      <div class="text-center">
+        <div class="title mt-4 mb-4">Create a profile by providing an image for your profile picture, a short description of yourself,your location, email address and a link to your portfolio.</div>
+        <hr>
+      </div>
+      <form action="{%url 'create_profile'%}" method="post" enctype="multipart/form-data"> {%csrf_token%}
+        {% bootstrap_form form%} <input type="submit" class="btn btn-sm create-prof-btn" value="Create Profile">
+      </form>
+    </div>
+  </div>
+</div>
+<!-- End Create Profile -->
+<!-- Footer  -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>About</h6>
+        <p class="text-justify">The awards for design, creativity and innovation on the Internet</p>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <h6>Categories</h6>
+        <ul class="footer-links">
+        </ul>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/profile/{{request.user.id}}">Profile</a></li>
+          <li><a href="/create_project">Add Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by <a href="#">Joy Kirii</a>. </p>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="bi bi-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="bi bi-twitter"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="bi bi-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End Footer  -->
+{% endblock %}
