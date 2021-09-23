@@ -9,13 +9,13 @@ class CreateProfileForm(ModelForm):
     model=Profile
     exclude =['user']
 
-class UpdateProfileForm(ModelForm)
+class UpdateProfileForm(ModelForm):
   class Meta:
     model=Profile
     exclude=['user']
 
 
-class ProjectForm(ModelForm):
+class ProjectForm(ModelForm)
   class Meta:
     model=Project
     exclude=['profile', 'post_date',]
