@@ -20,13 +20,13 @@ class ProjectForm(ModelForm):
     model=Project
     exclude=['profile', 'post_date',]
 
-class RateForm(ModelForm)
+class RateForm(ModelForm):
   class Meta:
     model=Rate
     fields=['design','usability','content']
     
 
-class CreateUserForm(UserCreationForm):
+class CreateUserForm(UserCreationForm)
   class Meta:
     model=User
     fields=['username', 'email','password1','password2']
