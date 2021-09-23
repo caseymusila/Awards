@@ -69,7 +69,7 @@ def search_project(request):
     return render(request, 'search_results.html')
 
 # Display Profile 
-@login_required(login_url="/accounts/login/"
+@login_required(login_url="/accounts/login/")
 def profile(request, profile_id):
   title="Profile"
   try:
@@ -85,7 +85,7 @@ def profile(request, profile_id):
 
 
 # Update Profile
-def edit_profile(request):
+def edit_profile(request)
   current_user = request.user
   if request.method == "POST":
     form = UpdateProfileForm(request.POST, request.FILES)
