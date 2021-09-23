@@ -35,7 +35,7 @@ def create_profile(request):
 
 
 # Email 
-@login_required(login_url="/accounts/login/"
+@login_required(login_url="/accounts/login/")
 def email(request):
   current_user = request.user
   email = current_user.email
