@@ -126,7 +126,7 @@ def create_project(request):
 
 
   # Display single project 
-@login_required(login_url="/accounts/login/"
+@login_required(login_url="/accounts/login/")
 def disp_project(request,project_id):
   project=Project.objects.get(pk=project_id)
   title=project.name.title()
