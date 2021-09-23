@@ -44,7 +44,7 @@ def email(request):
   return redirect(create_profile)
 
 # Display all projects 
-@login_required(login_url="/accounts/login/")
+@login_required(login_url="/accounts/login/"
 def home(request):
   title="awwwards"
   date=dt.date.today()
