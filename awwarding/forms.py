@@ -15,12 +15,12 @@ class UpdateProfileForm(ModelForm):
     exclude=['user']
 
 
-class ProjectForm(ModelForm)
+class ProjectForm(ModelForm):
   class Meta:
     model=Project
     exclude=['profile', 'post_date',]
 
-class RateForm(ModelForm):
+class RateForm(ModelForm)
   class Meta:
     model=Rate
     fields=['design','usability','content']
