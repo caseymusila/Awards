@@ -1,10 +1,10 @@
 from .models import Profile,Project,Rate
 from django.forms import ModelForm
 from django import forms
-from django.contrib.auth.forms import UserCreationFor
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-class CreateProfileForm(ModelForm):
+class CreateProfileForm(ModelForm)
   class Meta:
     model=Profile
     exclude =['user']
