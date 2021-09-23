@@ -178,7 +178,7 @@ def disp_project(request,project_id):
 
 # Register
 def registerPage(request):
-  form = CreateUserForm()
+  form = CreateUserForm(
 
   if request.method =='POST':
     form = CreateUserForm(request.POST)
