@@ -85,7 +85,7 @@ def profile(request, profile_id):
 
 
 # Update Profile
-def edit_profile(request)
+def edit_profile(request):
   current_user = request.user
   if request.method == "POST":
     form = UpdateProfileForm(request.POST, request.FILES)
@@ -106,7 +106,7 @@ def edit_profile(request)
 
 # Add Project 
 @login_required(login_url="/accounts/login/")
-def create_project(request):
+def create_project(request)
   title="Add Project"
   if request.method == "POST":
     form = ProjectForm(request.POST, request.FILES)
