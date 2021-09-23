@@ -44,7 +44,7 @@ def email(request):
   return redirect(create_profile)
 
 # Display all projects 
-@login_required(login_url="/accounts/login/"
+@login_required(login_url="/accounts/login/")
 def home(request):
   title="awwwards"
   date=dt.date.today()
@@ -53,7 +53,7 @@ def home(request):
 
 #Search Project 
 @login_required(login_url="/accounts/login/")
-def search_project(request):
+def search_project(request)
   if "project" in request.GET and request.GET["project"]:
     search_term= request.GET.get("project")
     # title="Search"
