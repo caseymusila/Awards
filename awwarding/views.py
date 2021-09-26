@@ -16,7 +16,7 @@ from django.contrib import messages
 
 
 #Creating a profile
-@login_required(login_url="/accounts/login/")
+@login_required(login_url="login/")
 def create_profile(request):
   title="Create Profile"
   current_user = request.user
@@ -35,7 +35,7 @@ def create_profile(request):
 
 
 # Email 
-@login_required(login_url="/accounts/login/")
+@login_required(login_url="login")
 def email(request):
   current_user = request.user
   email = current_user.email
@@ -44,7 +44,7 @@ def email(request):
   return redirect(create_profile)
 
 # Display all projects 
-@login_required(login_url="/accounts/login/")
+@login_required(login_url="login")
 def home(request):
   title="awwwards"
   date=dt.date.today()
@@ -52,7 +52,7 @@ def home(request):
   return render(request, 'home.html', {"date":date, "title":title, "projects":projects})
 
 #Search Project 
-@login_required(login_url="/accounts/login/")
+@login_required(login_url="login")
 def search_project(request):
   if "project" in request.GET and request.GET["project"]:
     search_term= request.GET.get("project")
@@ -69,7 +69,7 @@ def search_project(request):
     return render(request, 'search_results.html')
 
 # Display Profile 
-@login_required(login_url="/accounts/login/")
+@login_required(login_url="login")
 def profile(request, profile_id):
   title="Profile"
   try:
@@ -105,7 +105,7 @@ def edit_profile(request):
 
 
 # Add Project 
-@login_required(login_url="/accounts/login/")
+@login_required(login_url="login")
 def create_project(request):
   title="Add Project"
   if request.method == "POST":
@@ -126,7 +126,7 @@ def create_project(request):
 
 
   # Display single project 
-@login_required(login_url="/accounts/login/")
+@login_required(login_url="login")
 def disp_project(request,project_id):
   project=Project.objects.get(pk=project_id)
   title=project.name.title()
