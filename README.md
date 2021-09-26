@@ -1,4 +1,4 @@
-# Awwwards
+# Awards
 
 ## Author
 
@@ -6,7 +6,7 @@ Casey Kyalo
 
 ## Description
 
-Awwwards is a platform that allows developers to submit their projects/applications to be rated based on design, usability and content. Developers are also able to see other developers' profile and projects. Each day, the project with the highest average score is featured on the landing page.
+Awards is a platform that allows developers to submit their projects/applications to be rated based on design, usability and content. Developers are also able to see other developers' profile and projects. Each day, the project with the highest average score is featured on the landing page.
 
 ## Link
 
